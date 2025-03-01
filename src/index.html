@@ -1,35 +1,53 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="./assets/img/4geeks.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello Rigo with Vanilla.js</title>
 
-    <!-- Fontawesome is our recomended library for icons -->
-    <link
-      rel="stylesheet"
-      href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
-      integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ"
-      crossorigin="anonymous"
-    />
-  </head>
-  <body>
-    <!-- Write your HTML code here, you can delete everything withing the body tags -->
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" href="./assets/img/4geeks.ico" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Random Card Generator - César Arnetta</title>
+
+  <!-- Fontawesome is our recomended library for icons -->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css"
+    integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous" />
+</head>
+
+<body>
+  <!-- Write your HTML code here, you can delete everything withing the body tags -->
+  <main>
     <div class="container-fluid text-center">
-      <h1 class="mt-5">Hello Rigo!</h1>
-      <img src="./assets/img/rigo-baby.jpg" />
-      <p class="alert alert-warning mt-4">
-        If this text is <b>not</b> centered and <b>yellow</b>, you probably have
-        an error
-      </p>
-      <div class="fixed-bottom p-4">
-        Made with ❤️ by
-        <a href="https://www.4geeksacademy.com">4Geeks Academy</a>
+      <div class="col-3" id="dinamic-size" style="margin: 50px auto; background-color: white; border-radius: 20px;">
+        <div class="row"
+          style="width: 100%; text-align: start; padding: 0px 1rem; height: 20%; align-items: center; font-size: 4rem;">
+          <p id="left-icon"></p>
+        </div>
+        <div class="row" style="height: 60%; align-items: center; font-size: 4rem;">
+          <p id="number"></p>
+        </div>
+        <div class="row"
+          style="width: 100%; text-align: start; height: 20%; align-items: center; font-size: 4rem; transform: rotate(180deg)">
+          <p id="right-icon"></p>
+        </div>
+      </div>
+      <div class="col-3" style="margin: 0 auto;">
+        <div class="row">
+          <button class="btn btn-info" id="btn" style="margin: auto;">Generar nueva carta</button>
+        </div>
+        <div class="row">
+          <label style="color:white">Indica el ancho (recomendable valores entre 20 y 30)</label>
+          <input class="input-group-text" type="number" id="width-card" maxlength="2" min="20" max="30" value="20">
+        </div>
+        <div class="row">
+          <label style="color:white">Indica el alto (recomendable valores entre 20 y 30)</label>
+          <input class="input-group-text" type="text" id="height-card" maxlength="2"
+            oninput="this.value=this.value.replace(/[^0-9]/g,'')">
+          <span id="error-message" style="color: white; display: none;">Por favor indica valores entre 20 y 30</span>
+        </div>
       </div>
     </div>
+  </main>
+  <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
+  <script type="module" src="/app.js"></script>
+</body>
 
-    <!-- Do not delete this script tag, this is what connects your HTML with the Javascript code -->
-    <script type="module" src="/app.js"></script>
-  </body>
 </html>

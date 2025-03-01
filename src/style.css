@@ -1,5 +1,13 @@
 @import "bootstrap/dist/css/bootstrap.min.css";
 
 body{
-    background: white;
+    background: green;
+}
+
+.btn:hover{
+    background-color: #0D6EFD;
+}
+
+.btn:active{
+    background-color: white;
 }
